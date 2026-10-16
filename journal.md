@@ -136,6 +136,6 @@
 - Verify that the Linux failed-login evidence corresponds specifically to an **SSH** failure, not only a general PAM failure.
 - Save an old-alert query screenshot taken **after** a full `siem-host` reboot.
 - Verify clock/NTP status on all three VMs, not just the SIEM host.
-- Create VMware final snapshots named `w1-done` for each VM and capture evidence.
+- **Completed:** Created VMware final snapshots named `w1-done` for each VM. The three Snapshot Manager screenshots show both `w1-clean-install` and `w1-done`: [win-client](evidence/18-win-client-w1-done-snapshot.png), [ubuntu-web](evidence/19-ubuntu-web-w1-done-snapshot.png), and [siem-host](evidence/20-siem-host-w1-done-snapshot.png).
 - Manually review every public screenshot for secrets and complete a Git secret check.
 - Record Windows evaluation expiration, if the installed edition is an Evaluation build.
