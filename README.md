@@ -17,7 +17,7 @@ See [network diagram](architecture/network-diagram.md) and [address table](archi
 VMnet9 is a dedicated host-only 10.10.10.0/24 network with DHCP disabled. siem-host also uses NAT for downloading images and updates. Endpoint NAT access was temporary for installation and subsequently removed. The physical VMware host reaches the Wazuh Dashboard at https://10.10.10.10 and the Apache page at http://10.10.10.20.
 
 ## Tools and versions
-- VMware Workstation; Ubuntu Server 24.04 LTS; Windows 10.
+- VMware Workstation; Ubuntu Server 24.04 LTS; Windows 10/11 (verify exact edition).
 - Wazuh Manager, Indexer, Dashboard and Linux/Windows agents: **4.14.7**.
 - Docker Engine and Docker Compose plugin installed from Docker's official Ubuntu repository.
 - Sysmon **15.22**, with SwiftOnSecurity community configuration.
@@ -96,7 +96,7 @@ Before publishing any new file or image:
 - Never upload Wazuh certificates, private key files, passwords, operational volumes, or the live Docker Compose configuration containing credentials.
 
 ## Snapshots and remaining final checks
-All three `w1-clean-install` VM snapshots were taken. Still to complete or provide evidence for: `w1-done` snapshots for each VM; verification that clocks are accurate on all three VMs; confirming the SSH origin of the failed PAM login; and a screenshot explicitly confirming a pre-reboot alert is searchable after the full host reboot. Verify the Windows evaluation expiry date if applicable.
+All three VMs have `w1-clean-install` and `w1-done` snapshots, verified through VMware Snapshot Manager screenshots: [win-client](evidence/18-win-client-w1-done-snapshot.png), [ubuntu-web](evidence/19-ubuntu-web-w1-done-snapshot.png), and [siem-host](evidence/20-siem-host-w1-done-snapshot.png). Still to complete: verify clocks on all three VMs; confirm the SSH origin of the failed PAM login; and capture an old-alert lookup specifically after the full host reboot. Verify the Windows evaluation expiry date if applicable.
 
 ## Repository contents
 - `README.md` — lab build, operation and findings.
