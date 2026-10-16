@@ -1,0 +1,41 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*password*
+*secret*
+*credential*
+*token*
+id_rsa*
+id_ed25519*
+
+# Wazuh configuration and certificates
+wazuh-docker/
+internal_users.yml
+config/wazuh_indexer_ssl_certs/
+docker-compose.yml
+compose.yml
+*.bak
+
+# Virtual machine files
+*.vmdk
+*.vdi
+*.ova
+*.ovf
+*.iso
+*.vmsn
+*.vmem
+*.vmsd
+*.vmx
+*.qcow2
+
+# Temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+__pycache__/
