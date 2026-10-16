@@ -1,6 +1,6 @@
 # Week 1 — Evidence Screenshots
 
-These screenshots were captured from the actual Mini-SOC lab during 15 October 2026 troubleshooting and verification. Each link opens a **real screenshot included in this folder**. The screenshots use consecutive, zero-padded filenames (01–17) ordered by the verification workflow, not by capture time. Screenshots are not simulated or recreated.
+These screenshots were captured from the actual Mini-SOC lab during 15 October 2026 troubleshooting and verification. Each link opens a **real screenshot included in this folder**. The screenshots use consecutive, zero-padded filenames (01–20) ordered by the verification workflow, not by capture time. Screenshots are not simulated or recreated.
 
 **Important privacy check before publishing:** Screenshots show local lab IP addresses, hostnames, usernames and dashboard details. No password or private key was intentionally copied into the repo, but visually review **every image** before making a GitHub commit. Image text is not protected by `.gitignore`.
 
@@ -26,6 +26,18 @@ These screenshots were captured from the actual Mini-SOC lab during 15 October 2
 | [View image](16-windows-network-isolation.png) — `16-windows-network-isolation.png` | Windows routes show no default gateway after NAT removal. |
 | [View image](17-linux-network-isolation.png) — `17-linux-network-isolation.png` | Linux endpoint routes only over isolated 10.10.10.0/24. |
 
+## Final VMware snapshots (Week 1)
+
+All three VMs have a visible `w1-clean-install` and `w1-done` snapshot in VMware Snapshot Manager:
+
+| Snapshot screenshot | Evidence |
+|---|---|
+| [18 — win-client](18-win-client-w1-done-snapshot.png) | `win-client`: both `w1-clean-install` and `w1-done` snapshots visible. |
+| [19 — ubuntu-web](19-ubuntu-web-w1-done-snapshot.png) | `ubuntu-web`: both snapshots visible. |
+| [20 — siem-host](20-siem-host-w1-done-snapshot.png) | `siem-host`: both snapshots visible. |
+
+This verifies the existence of the named snapshot checkpoints; restoring them was not tested.
+
 ## Detection and telemetry findings
 
 | Scenario | Wazuh rule | Severity | Image |
@@ -49,7 +61,7 @@ These screenshots were captured from the actual Mini-SOC lab during 15 October 2
 ## Evidence still to collect
 
 - Screenshot confirming a failed **SSH** authentication event specifically, including its source/service or event fields (the PAM alert alone does not unambiguously prove SSH).
-- Final VM snapshot names `w1-done` for all three VMs; also retain screenshots of initial `w1-clean-install` snapshots if not yet in this folder.
+- VMware `w1-clean-install` and `w1-done` snapshot names are verified for all three VMs (images 18–20).
 - Windows evaluation expiry screenshot/date.
 - Clocks and NTP verification on all three VMs.
 - Git secret scan/check screenshot before publication.
